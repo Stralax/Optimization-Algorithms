@@ -25,3 +25,4 @@ The following algorithms were implemented to solve the CeC 2022 functions:
 - Install dependencies:
   ```bash
   pip install opfunu numpy
+

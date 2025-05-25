@@ -1,0 +1,8 @@
+.algorithms/__pycache__
+
+.optimization_results_Ant_Colony_Optimization
+.optimization_results_Differential_Evolution
+.optimization_results_Grey_Wolf_Optimizer
+.optimization_results_Tabu_Search
+.optimization_results_Whale_Optimization_Algorithm
+.optimization_results_Guided_Local_Search

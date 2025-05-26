@@ -1,6 +1,6 @@
 import numpy as np
 
-def optimize(func, lb, ub, ndim, max_iter=1000, step_size=0.1, lambda_=0.1):
+def optimize(func, lb, ub, ndim, max_iter=10000, step_size=0.001, lambda_=0.1):
     # Initialize solution and penalties
     current = np.random.uniform(lb, ub, ndim)
     penalties = np.zeros(ndim)

@@ -7,12 +7,20 @@ from algorithms import grey_wolf_optimizer as gwo
 from algorithms import tabu_search as ts
 from algorithms import whale_optimization_algorithm as woa
 from algorithms import guided_local_search as gls
+from algorithms import simulated_annealing as sa  # Add new module
+from algorithms import nl_shade_rsp_mid
+from algorithms import genetic_algorithm as ga
 
 # List of CeC 2022 functions
 functions = [
-    cec2022.F12022, cec2022.F22022, cec2022.F32022, cec2022.F42022,
-    cec2022.F52022, cec2022.F62022, cec2022.F72022, cec2022.F82022,
-    cec2022.F92022, cec2022.F102022, cec2022.F112022, cec2022.F122022
+    cec2022.F12022, cec2022.F22022, cec2022.F32022,
+    cec2022.F42022,
+    cec2022.F52022,
+    cec2022.F62022, cec2022.F72022, cec2022.F82022,
+    cec2022.F92022, 
+    cec2022.F102022,
+    cec2022.F112022,
+    cec2022.F122022
 ]
 
 # List of optimization algorithms
@@ -22,7 +30,10 @@ algorithms = [
     ("Grey Wolf Optimizer", gwo.optimize),
     ("Tabu Search", ts.optimize),
     ("Whale Optimization Algorithm", woa.optimize),
-    ("Guided Local Search", gls.optimize)
+    ("Guided Local Search", gls.optimize),
+    ("Simulated Annealing", sa.optimize),  # Add Simulated Annealing
+    ("NL-SHADE-RSP-MID", nl_shade_rsp_mid.optimize),
+    ("Genetic Algorithm", ga.optimize)
 ]
 
 def main(algo_index=None):
@@ -72,8 +83,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--algo",
         type=int,
-        choices=range(1, 7),
-        help="Algorithm index (1: DE, 2: ACO, 3: GWO, 4: TS, 5: WOA, 6: GLS). If not provided, runs all algorithms."
+        choices=range(1, 10),  # Update to include 8
+        help="Algorithm index (1: DE, 2: ACO, 3: GWO, 4: TS, 5: WOA, 6: GLS, 7: SA, 8: NL-SHADE-RSP-MID). If not provided, runs all algorithms."
     )
     args = parser.parse_args()
     main(args.algo)
